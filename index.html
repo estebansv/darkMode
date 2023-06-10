@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>DarkMode</title>
+  <title>Botón de modo oscuro</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: white;
+    }
 
+    button {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-<h1>Dark Mode</h1>
-  
-<label class="switch">
-  <input onclick="changeColor()" type="checkbox">
+  <h1>Botón de modo oscuro</h1>
+  <button class="dark-mode" onclick="toggleDarkMode()">Modo oscuro</button>
+
+  <script>
+    function toggleDarkMode() {
+      var body = document.body;
+      var darkMode = body.classList.contains("dark-mode");
+
+      if (darkMode) {
+        body.classList.remove("dark-mode");
+      } else {
+        body.classList.add("dark-mode");
+      }
+    }
+  </script>
+ <label class="switch">
+  <input onclick="toggleDarkMode()" type="checkbox">
   <span class="slider round"></span>
   
 </label>
@@ -62,11 +93,5 @@ input:checked + .slider:before {
   
 </style>
 
-<script>
-function changeColor() {
-  var body = document.body;
-  body.style.backgroundColor = (body.style.backgroundColor == "white" ? "black" : "white");
-}
-</script>
 </body>
 </html>
