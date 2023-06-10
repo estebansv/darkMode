@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Botón de modo oscuro12!</title>
+  <title>Botón de modo oscuro</title>
   <style>
     body {
       font-family: sans-serif;
       background-color: white;
+    }
+    label{
+      width: 300px;
     }
 
     button {
@@ -23,8 +26,15 @@
   </style>
 </head>
 <body>
-  <h1>Botón de modo oscuro12</h1>
-  <button class="dark-mode" onclick="toggleDarkMode()">Modo oscuro</button>
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+ <h1>Dark mode</h1>
+</div>
+
+  
+  
+ <label style="width: 300px;" for="checkbox">Click here 👉  </label>
+ 
+
 
   <script>
     function toggleDarkMode() {
@@ -38,6 +48,61 @@
       }
     }
   </script>
+ <label class="switch">
+  <input onclick="toggleDarkMode()" type="checkbox">
+  <span class="slider round"></span>
+  
+</label>
+
+<style>
+ 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px; /* Hace el interruptor circular */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%; /* Hace el botón circular */
+}
+
+input:checked + .slider {
+  background-color: #4CAF50; /* Cambia el color de fondo cuando está activado */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Mueve el botón hacia la derecha cuando está activado */
+}
+
+  
+</style>
 
 </body>
 </html>
